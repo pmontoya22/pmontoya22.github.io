@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoenix Data Center Solutions (PHXDS) | VMware Migration & Next-Gen Infrastructure</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0A1128',
+                            slate: '#1C2541',
+                            blue: '#0052FF',
+                            cyan: '#00D2FF',
+                            accent: '#3A86FF',
+                            gold: '#FFC857'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(28, 37, 65, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #00D2FF 0%, #0052FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background: radial-gradient(circle at 70% 30%, rgba(0, 210, 255, 0.12) 0%, rgba(10, 17, 40, 0.95) 70%),
+                        linear-gradient(180deg, #0A1128 0%, #1C2541 100%);
+        }
+    </style>
+</head>
+<body class="bg-brand-navy text-slate-100 antialiased selection:bg-brand-cyan selection:text-brand-navy">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-slate via-brand-navy to-brand-slate border-b border-slate-800 text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-slate-300">
+            <div class="flex items-center gap-2">
+                <span class="bg-brand-cyan/20 text-brand-cyan text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Enterprise Tech VAR</span>
+                <span>When Reliability & Migration Expertise Count</span>
+            </div>
+            <div class="flex items-center gap-6 text-xs">
+                <a href="tel:6028772307" class="hover:text-brand-cyan transition flex items-center gap-1.5 font-medium">
+                    <i class="fa-solid fa-phone text-brand-cyan"></i> (602) 877-2307
+                </a>
+                <span class="text-slate-700">|</span>
+                <span class="hidden sm:inline text-slate-400"><i class="fa-solid fa-location-dot text-brand-cyan mr-1"></i> Phoenix / Scottsdale, AZ</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header / Navigation -->
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80 bg-brand-navy/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-slate to-brand-navy border border-brand-cyan/30 flex items-center justify-center p-2 shadow-lg shadow-brand-blue/10 group-hover:border-brand-cyan transition duration-300">
+                    <svg viewBox="0 0 100 100" class="w-full h-full text-brand-cyan fill-current">
+                        <!-- Shield/Padlock shape outline -->
+                        <path d="M50 10 C30 10 20 25 20 40 L20 50 C20 75 50 90 50 90 C50 90 80 75 80 50 L80 40 C80 25 70 10 50 10 Z" fill="none" stroke="currentColor" stroke-width="6" />
+                        <!-- Stylized Phoenix Eagle -->
+                        <path d="M50 30 L65 45 L58 48 L75 60 L62 60 L50 48 L38 60 L25 60 L42 48 L35 45 Z" fill="#00D2FF" />
+                        <rect x="42" y="65" width="16" height="4" rx="2" fill="#FFC857" />
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-black tracking-tight text-white flex items-center gap-1">
+                        PHX<span class="text-brand-cyan">DS</span>
+                    </span>
+                    <span class="text-[10px] font-bold text-slate-400 tracking-wider uppercase -mt-1">Phoenix Data Center Solutions</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-slate-300">
+                <a href="#migration" class="hover:text-brand-cyan transition hover:scale-105">VMware Migration</a>
+                <a href="#platforms" class="hover:text-brand-cyan transition hover:scale-105">Platforms</a>
+                <a href="#offerings" class="hover:text-brand-cyan transition hover:scale-105">Hardware & Services</a>
+                <a href="#cases" class="hover:text-brand-cyan transition hover:scale-105">Case Studies</a>
+                <a href="#calculator" class="hover:text-brand-cyan transition hover:scale-105">TCO Calculator</a>
+                <a href="#assessment-tool" class="hover:text-brand-cyan transition hover:scale-105">Readiness Tool</a>
+                <a href="#about" class="hover:text-brand-cyan transition hover:scale-105">About Us</a>
+            </nav>
+
+            <!-- Action CTA -->
+            <div class="flex items-center gap-4">
+                <a href="#quote" class="bg-gradient-to-r from-brand-blue to-brand-cyan text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-lg shadow-brand-blue/20 hover:shadow-brand-cyan/30 hover:opacity-95 transition transform active:scale-95">
+                    Request Migration Assessment
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg relative pt-16 pb-24 overflow-hidden border-b border-slate-800">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-brand-slate/80 border border-brand-cyan/30 rounded-full px-4 py-1.5 text-xs text-brand-cyan font-medium">
+                        <i class="fa-solid fa-arrows-rotate animate-spin text-brand-cyan"></i>
+                        <span>Broadcom / VMware Renewal Price Surge? We Have Solutions.</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Next-Gen Data Center & <span class="gradient-text">VMware Migration</span> Expertise
+                    </h1>
+
+                    <p class="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Phoenix Data Center Solutions provides enterprise hardware, software licensing, and turnkey professional services to smoothly transition your infrastructure from VMware to high-performance hyperconverged platforms.
+                    </p>
+
+                    <!-- Key Pillars Tags -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                        <div class="glass-card p-3 rounded-lg text-center border border-slate-700/50">
+                            <i class="fa-solid fa-server text-brand-cyan text-lg mb-1 block"></i>
+                            <span class="text-xs font-semibold text-slate-200">Hardware</span>
+                        </div>
+                        <div class="glass-card p-3 rounded-lg text-center border border-slate-700/50">
+                            <i class="fa-solid fa-key text-brand-cyan text-lg mb-1 block"></i>
+                            <span class="text-xs font-semibold text-slate-200">Licensing</span>
+                        </div>
+                        <div class="glass-card p-3 rounded-lg text-center border border-slate-700/50">
+                            <i class="fa-solid fa-layer-group text-brand-cyan text-lg mb-1 block"></i>
+                            <span class="text-xs font-semibold text-slate-200">HCI OS Platforms</span>
+                        </div>
+                        <div class="glass-card p-3 rounded-lg text-center border border-slate-700/50">
+                            <i class="fa-solid fa-headset text-brand-cyan text-lg mb-1 block"></i>
+                            <span class="text-xs font-semibold text-slate-200">Migration Services</span>
+                        </div>
+                    </div>
+
+                    <!-- Call to action buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#calculator" class="w-full sm:w-auto bg-gradient-to-r from-brand-blue to-brand-cyan text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-brand-cyan/20 hover:scale-105 transition duration-200 text-center">
+                            Calculate TCO Savings <i class="fa-solid fa-calculator ml-2"></i>
+                        </a>
+                        <a href="#platforms" class="w-full sm:w-auto glass-card hover:bg-slate-800 text-slate-200 font-semibold px-8 py-4 rounded-xl border border-slate-700 hover:border-brand-cyan transition duration-200 text-center">
+                            Explore Alternative HCI <i class="fa-solid fa-arrow-right ml-2 text-brand-cyan"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column - Visual Feature Card -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-700/80 shadow-2xl relative">
+                        <div class="absolute -top-3 -right-3 bg-brand-gold text-brand-navy font-extrabold text-xs px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                            Turnkey Migration
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-shield-halved text-brand-cyan"></i> Migration Path Overview
+                        </h3>
+
+                        <div class="space-y-4">
+                            <!-- Legacy VMware Block -->
+                            <div class="p-4 rounded-xl bg-red-950/30 border border-red-500/30 flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs text-red-400 font-semibold uppercase tracking-wider block">Current Environment</span>
+                                    <span class="font-bold text-slate-200 text-sm">VMware ESXi / vSphere</span>
+                                </div>
+                                <i class="fa-solid fa-triangle-exclamation text-red-400 text-lg"></i>
+                            </div>
+
+                            <div class="text-center py-1">
+                                <i class="fa-solid fa-arrow-down-long text-brand-cyan text-xl animate-bounce"></i>
+                            </div>
+
+                            <!-- Target Platforms Grid -->
+                            <div class="p-4 rounded-xl bg-brand-slate/90 border border-brand-cyan/40 space-y-3">
+                                <span class="text-xs text-brand-cyan font-semibold uppercase tracking-wider block">Target Next-Gen HCI Solutions</span>
+                                <div class="grid grid-cols-2 gap-2 text-xs text-slate-300 font-medium">
+                                    <div class="bg-brand-navy/60 p-2 rounded border border-slate-700 flex items-center gap-2">
+                                        <i class="fa-solid fa-check text-emerald-400"></i> Nutanix AHV
+                                    </div>
+                                    <div class="bg-brand-navy/60 p-2 rounded border border-slate-700 flex items-center gap-2">
+                                        <i class="fa-solid fa-check text-emerald-400"></i> Verge.IO
+                                    </div>
+                                    <div class="bg-brand-navy/60 p-2 rounded border border-slate-700 flex items-center gap-2">
+                                        <i class="fa-solid fa-check text-emerald-400"></i> HPE SimpliVity
+                                    </div>
+                                    <div class="bg-brand-navy/60 p-2 rounded border border-slate-700 flex items-center gap-2">
+                                        <i class="fa-solid fa-check text-emerald-400"></i> Scale Computing
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-xs text-slate-400 flex items-center gap-2 pt-2">
+                                <i class="fa-solid fa-circle-check text-brand-cyan"></i>
+                                <span>Complete licensing optimization & live workload migration guarantees.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Migration Platforms Spotlight Section -->
+    <section id="platforms" class="py-20 bg-brand-navy border-b border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-cyan uppercase tracking-widest mb-2">Alternative Hypervisors & HCI</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Proven VMware Alternatives Supported by PHXDS</p>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">We evaluate your current compute, storage, and licensing footprint to match you with the ideal enterprise hyperconverged target.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Nutanix Card -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-cyan transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold text-brand-cyan bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/20">Enterprise Leader</span>
+                            <i class="fa-solid fa-cubes text-2xl text-brand-cyan group-hover:scale-110 transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Nutanix AHV & Cloud Platform</h3>
+                        <p class="text-slate-400 text-sm mb-4">Market-leading hyperconverged infrastructure with native license-free AHV hypervisor and automated migration tooling from ESXi.</p>
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-brand-cyan"></i> 1-Click Move migration tool for minimal downtime</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-brand-cyan"></i> Enterprise storage features & SAN elimination</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-brand-cyan"></i> Dell XC, HPE ProLiant, Lenovo platform hardware</li>
+                        </ul>
+                    </div>
+                    <a href="#quote" class="text-xs font-bold text-brand-cyan hover:underline inline-flex items-center gap-1">Request Nutanix Proposal <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Verge.IO Card -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-cyan transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full border border-emerald-400/20">High Efficiency / Low TCO</span>
+                            <i class="fa-solid fa-bolt text-2xl text-emerald-400 group-hover:scale-110 transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Verge.IO Ultracloud OS</h3>
+                        <p class="text-slate-400 text-sm mb-4">Single software stack integrating virtualization, storage, and networking directly on commodity server hardware for massive cost reduction.</p>
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-emerald-400"></i> Up to 70% lower licensing costs than Broadcom/VMware</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-emerald-400"></i> Repurpose existing hardware without forklift upgrade</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-emerald-400"></i> Built-in inline deduplication & DR sync</li>
+                        </ul>
+                    </div>
+                    <a href="#quote" class="text-xs font-bold text-emerald-400 hover:underline inline-flex items-center gap-1">Request Verge.IO Proposal <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- HPE SimpliVity Card -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-cyan transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold text-blue-400 bg-blue-400/10 px-3 py-1 rounded-full border border-blue-400/20">Hardware Accelerated</span>
+                            <i class="fa-solid fa-server text-2xl text-blue-400 group-hover:scale-110 transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">HPE SimpliVity & Alletra</h3>
+                        <p class="text-slate-400 text-sm mb-4">Enterprise-grade hyperconverged nodes engineered for extreme data efficiency, continuous backup, and rapid VM restoration.</p>
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-blue-400"></i> Hardware accelerator card for zero latency impact</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-blue-400"></i> Guaranteed 60:1 data efficiency ratio</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-blue-400"></i> Seamless deployment on HPE ProLiant Gen11</li>
+                        </ul>
+                    </div>
+                    <a href="#quote" class="text-xs font-bold text-blue-400 hover:underline inline-flex items-center gap-1">Request HPE Proposal <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Scale Computing HC3 -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-cyan transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">SMB & Edge Choice</span>
+                            <i class="fa-solid fa-network-wired text-2xl text-amber-400 group-hover:scale-110 transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Scale Computing Platform</h3>
+                        <p class="text-slate-400 text-sm mb-4">Autonomous, self-healing hyperconverged infrastructure designed for mid-market and edge environments requiring ultra-simple management.</p>
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-amber-400"></i> Zero virtualization licensing fees</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-amber-400"></i> HyperCore OS with automated failover</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-amber-400"></i> Effortless VM migration from vSphere</li>
+                        </ul>
+                    </div>
+                    <a href="#quote" class="text-xs font-bold text-amber-400 hover:underline inline-flex items-center gap-1">Request Scale Proposal <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Microsoft Azure Stack HCI -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-cyan transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold text-purple-400 bg-purple-400/10 px-3 py-1 rounded-full border border-purple-400/20">Hybrid Cloud Native</span>
+                            <i class="fa-brands fa-microsoft text-2xl text-purple-400 group-hover:scale-110 transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Azure Stack HCI / Hyper-V</h3>
+                        <p class="text-slate-400 text-sm mb-4">Combine on-premises hyperconverged infrastructure with native Azure cloud services, monitoring, and simplified Windows Server licensing.</p>
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-purple-400"></i> Native integration with Azure Arc management</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-purple-400"></i> Existing Windows Enterprise licensing benefits</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-purple-400"></i> Validated partner hardware from Dell & Lenovo</li>
+                        </ul>
+                    </div>
+                    <a href="#quote" class="text-xs font-bold text-purple-400 hover:underline inline-flex items-center gap-1">Request Azure Stack Proposal <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Custom / Multi-Platform Migration -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-cyan transition duration-300 flex flex-col justify-between group bg-gradient-to-br from-brand-slate to-brand-navy">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded-full border border-brand-gold/20">Custom Consultation</span>
+                            <i class="fa-solid fa-sliders text-2xl text-brand-gold group-hover:scale-110 transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Hybrid or Custom Strategy</h3>
+                        <p class="text-slate-400 text-sm mb-4">Not sure which platform fits best? PHXDS conducts a full workload audit and builds side-by-side performance and pricing benchmarks.</p>
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-brand-gold"></i> Multi-vendor TCO audit</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-brand-gold"></i> Live proof-of-concept (POC) staging</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-brand-gold"></i> Hardware trade-in credit evaluation</li>
+                        </ul>
+                    </div>
+                    <a href="#quote" class="text-xs font-bold text-brand-gold hover:underline inline-flex items-center gap-1">Schedule Migration Audit <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies & Success Stories Section -->
+    <section id="cases" class="py-20 bg-brand-slate/30 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-cyan uppercase tracking-widest mb-2">Verified Client Success</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Enterprise VMware Migration Case Studies</p>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">See how organizations eliminatedBroadcom renewal price shocks and modernized their data centers with PHXDS.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Case 1 -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold bg-brand-cyan/20 text-brand-cyan px-2.5 py-1 rounded">Fintech / 320 VMs</span>
+                            <span class="text-xs text-slate-400">Phoenix, AZ</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Regional Financial Institution</h4>
+                        <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+                            Facing a 310% renewal increase under Broadcom vSphere, this financial services firm partnered with PHXDS to migrate 320 mission-critical VMs to Nutanix AHV on Dell PowerEdge hardware.
+                        </p>
+                        <div class="space-y-2 mb-6 text-xs bg-brand-navy/60 p-3 rounded-lg border border-slate-800">
+                            <div class="flex justify-between text-slate-300">
+                                <span>3-Year Savings:</span>
+                                <span class="font-bold text-emerald-400">$340,000+</span>
+                            </div>
+                            <div class="flex justify-between text-slate-300">
+                                <span>Downtime:</span>
+                                <span class="font-bold text-brand-cyan">Zero (Live Migration)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#quote" class="text-xs font-bold text-brand-cyan hover:underline flex items-center gap-1">Read Full Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold bg-emerald-400/20 text-emerald-400 px-2.5 py-1 rounded">Healthcare / 180 VMs</span>
+                            <span class="text-xs text-slate-400">Scottsdale, AZ</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Healthcare Analytics Provider</h4>
+                        <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+                            Migrated legacy VMware clusters to Verge.IO Ultracloud OS, repurposing existing HPE ProLiant Gen10 servers and slashing total infrastructure licensing expenses by 68%.
+                        </p>
+                        <div class="space-y-2 mb-6 text-xs bg-brand-navy/60 p-3 rounded-lg border border-slate-800">
+                            <div class="flex justify-between text-slate-300">
+                                <span>3-Year Savings:</span>
+                                <span class="font-bold text-emerald-400">$215,000+</span>
+                            </div>
+                            <div class="flex justify-between text-slate-300">
+                                <span>Hardware Repurposed:</span>
+                                <span class="font-bold text-emerald-400">100% (No Forklift)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#quote" class="text-xs font-bold text-emerald-400 hover:underline flex items-center gap-1">Read Full Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold bg-blue-400/20 text-blue-400 px-2.5 py-1 rounded">Manufacturing / 90 VMs</span>
+                            <span class="text-xs text-slate-400">Tucson, AZ</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Industrial Automation Group</h4>
+                        <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+                            De-risked edge branch infrastructure by deploying Scale Computing HC3 with automated failover and 1-click migration tooling directly replacing standalone ESXi hosts.
+                        </p>
+                        <div class="space-y-2 mb-6 text-xs bg-brand-navy/60 p-3 rounded-lg border border-slate-800">
+                            <div class="flex justify-between text-slate-300">
+                                <span>Licensing Elimination:</span>
+                                <span class="font-bold text-blue-400">100% Removed</span>
+                            </div>
+                            <div class="flex justify-between text-slate-300">
+                                <span>Admin Time Saved:</span>
+                                <span class="font-bold text-blue-400">15 hrs/week</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#quote" class="text-xs font-bold text-blue-400 hover:underline flex items-center gap-1">Read Full Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Offerings Breakdown Section -->
+    <section id="offerings" class="py-20 bg-brand-slate/40 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-cyan uppercase tracking-widest mb-2">Complete VAR Capabilities</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Hardware, Software, and Professional Services</p>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Like top national solution providers, PHXDS handles the entire procurement and deployment lifecycle under a single contract.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Pillar 1: Hardware Provisioning -->
+                <div class="glass-card rounded-2xl p-8 border border-slate-700/60 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan text-xl mb-6">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">1. Enterprise Hardware</h3>
+                    <p class="text-slate-400 text-sm mb-6">Volume tier pricing and rapid delivery on leading server, storage, and networking architectures validated for modern hypervisors.</p>
+
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <div class="border-l-2 border-brand-cyan pl-3">
+                            <strong class="text-white block">Server Infrastructure</strong>
+                            Dell PowerEdge, HPE ProLiant, Cisco UCS, Lenovo ThinkSystem, Supermicro.
+                        </div>
+                        <div class="border-l-2 border-brand-cyan pl-3">
+                            <strong class="text-white block">High-Speed Networking</strong>
+                            25G/100G Switches (Arista, Cisco, NVIDIA Mellanox) tailored for HCI storage backplanes.
+                        </div>
+                        <div class="border-l-2 border-brand-cyan pl-3">
+                            <strong class="text-white block">Power & Infrastructure</strong>
+                            APC, Eaton UPS, PDU, and high-density liquid/air cooling power units.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 2: Software & Licensing -->
+                <div class="glass-card rounded-2xl p-8 border border-slate-700/60 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-brand-blue/10 border border-brand-blue/30 flex items-center justify-center text-brand-blue text-xl mb-6">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">2. Software & Licensing</h3>
+                    <p class="text-slate-400 text-sm mb-6">Eliminate subscription lock-in and optimize licensing costs with enterprise-grade hypervisor and backup software packages.</p>
+
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <div class="border-l-2 border-brand-blue pl-3">
+                            <strong class="text-white block">HCI Operating Systems</strong>
+                            Nutanix NDB/AOS, Verge.IO UltraCloud, Scale HyperCore, Microsoft HCI.
+                        </div>
+                        <div class="border-l-2 border-brand-blue pl-3">
+                            <strong class="text-white block">Backup & Replication</strong>
+                            Veeam Software, HYCU, Commvault, Cohesity native target integrations.
+                        </div>
+                        <div class="border-l-2 border-brand-blue pl-3">
+                            <strong class="text-white block">Licensing Optimization</strong>
+                            CPU core count auditing and license consolidation to reduce recurring annual spend.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 3: Professional Services -->
+                <div class="glass-card rounded-2xl p-8 border border-slate-700/60 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-xl mb-6">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">3. Migration Services</h3>
+                    <p class="text-slate-400 text-sm mb-6">End-to-end engineered migration executed by certified data center architects with zero impact on operational SLAs.</p>
+
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <div class="border-l-2 border-brand-gold pl-3">
+                            <strong class="text-white block">Assessment & Planning</strong>
+                            Full discovery of VM dependency mapping, storage IOPS, and network topology.
+                        </div>
+                        <div class="border-l-2 border-brand-gold pl-3">
+                            <strong class="text-white block">Live Data Cutover</strong>
+                            Non-disruptive block-level data replication and scheduled cutover windows.
+                        </div>
+                        <div class="border-l-2 border-brand-gold pl-3">
+                            <strong class="text-white block">Post-Migration Support</strong>
+                            24/7 hypervisor health monitoring, admin training, and operational handoff.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Hypervisor Compatibility & Workload Readiness Checker -->
+    <section id="assessment-tool" class="py-20 bg-brand-slate/20 border-b border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold text-brand-cyan uppercase tracking-widest mb-2">Interactive Evaluation Tool</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Workload Compatibility & Readiness Checker</p>
+                <p class="text-slate-400 mt-2 text-sm">Select your environment parameters below to instantly check compatibility and recommended migration pathway.</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-700 shadow-xl space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Primary Workload Type</label>
+                        <select id="workloadType" class="w-full bg-brand-slate text-white border border-slate-600 rounded-lg p-3 text-sm focus:border-brand-cyan focus:outline-none">
+                            <option value="general">General Enterprise VMs & Databases</option>
+                            <option value="vdi">Virtual Desktop Infrastructure (VDI)</option>
+                            <option value="edge">Edge / Remote Office / Branch Office</option>
+                            <option value="heavy">High IOPS Storage Intensive</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Existing Server Hardware Age</label>
+                        <select id="hardwareAge" class="w-full bg-brand-slate text-white border border-slate-600 rounded-lg p-3 text-sm focus:border-brand-cyan focus:outline-none">
+                            <option value="repurpose">1 - 3 Years (Ideal for OS Repurposing)</option>
+                            <option value="refresh">4 - 6 Years (Recommend Hardware Refresh)</option>
+                            <option value="mixed">Mixed / Legacy Datacenter</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Primary Migration Priority</label>
+                        <select id="migrationPriority" class="w-full bg-brand-slate text-white border border-slate-600 rounded-lg p-3 text-sm focus:border-brand-cyan focus:outline-none">
+                            <option value="cost">Maximum License Cost Reduction</option>
+                            <option value="downtime">Zero Downtime & Live Migration</option>
+                            <option value="simplicity">Ultimate Ease of Management</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="text-center pt-2">
+                    <button type="button" onclick="runReadinessCheck()" class="bg-gradient-to-r from-brand-blue to-brand-cyan text-white font-bold px-8 py-3.5 rounded-xl shadow-lg hover:shadow-brand-cyan/30 transition text-sm uppercase tracking-wider">
+                        Run Instant Compatibility Assessment <i class="fa-solid fa-wand-magic-sparkles ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Assessment Result Box (Dynamic) -->
+                <div id="readinessResultBox" class="hidden mt-6 p-6 rounded-xl bg-brand-navy border border-brand-cyan/50 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-brand-cyan font-semibold uppercase tracking-wider">Recommended Architecture Match</span>
+                                <h4 id="recPlatformTitle" class="text-lg font-bold text-white">Nutanix AHV Cloud Platform</h4>
+                            </div>
+                        </div>
+                        <span class="bg-emerald-400/20 text-emerald-400 text-xs font-bold px-3 py-1 rounded-full border border-emerald-400/30">99.4% Compatibility</span>
+                    </div>
+
+                    <p id="recPlatformDesc" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        Based on your enterprise workload profile and hardware state, Nutanix AHV with 1-Click Move migration tooling provides the lowest operational risk and immediate VMware parity.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
+                        <div class="bg-brand-slate p-3 rounded border border-slate-800">
+                            <strong class="text-white block mb-1"><i class="fa-solid fa-clock text-brand-cyan mr-1"></i> Migration Timeline</strong>
+                            <span class="text-slate-400">3 to 5 weeks turnkey execution</span>
+                        </div>
+                        <div class="bg-brand-slate p-3 rounded border border-slate-800">
+                            <strong class="text-white block mb-1"><i class="fa-solid fa-shield-halved text-brand-cyan mr-1"></i> Data Continuity</strong>
+                            <span class="text-slate-400">Live storage & VM block sync</span>
+                        </div>
+                        <div class="bg-brand-slate p-3 rounded border border-slate-800">
+                            <strong class="text-white block mb-1"><i class="fa-solid fa-file-invoice-dollar text-brand-cyan mr-1"></i> Est. ROI Period</strong>
+                            <span class="text-slate-400">Under 8 months from cutover</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive TCO Calculator Section -->
+    <section id="calculator" class="py-20 bg-brand-navy border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold text-brand-cyan uppercase tracking-widest mb-2">Interactive Cost Model</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">VMware Migration TCO & Savings Estimator</p>
+                <p class="text-slate-400 mt-2 text-sm">Compare predicted 3-year licensing and hardware costs when transitioning to alternative platforms.</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 sm:p-10 border border-slate-700 shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Calculator Inputs -->
+                    <div class="lg:col-span-5 space-y-6 border-b lg:border-b-0 lg:border-r border-slate-700 pb-8 lg:pb-0 lg:pr-8">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-200 mb-2">
+                                Number of Virtual Machines (VMs): <span id="vmCountVal" class="text-brand-cyan font-bold text-lg">150</span>
+                            </label>
+                            <input type="range" id="vmCount" min="20" max="1000" step="10" value="150" 
+                                class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-brand-cyan">
+                            <div class="flex justify-between text-xs text-slate-400 mt-1">
+                                <span>20 VMs</span>
+                                <span>500 VMs</span>
+                                <span>1,000+ VMs</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-200 mb-2">Total Physical CPU Cores Across Hosts</label>
+                            <select id="cpuCores" class="w-full bg-brand-slate text-white border border-slate-600 rounded-lg p-3 text-sm focus:border-brand-cyan focus:outline-none">
+                                <option value="64">64 Physical Cores (2-4 Hosts)</option>
+                                <option value="128" selected>128 Physical Cores (4-8 Hosts)</option>
+                                <option value="256">256 Physical Cores (8-16 Hosts)</option>
+                                <option value="512">512+ Physical Cores (Enterprise Cluster)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-200 mb-2">Target Migration Platform</label>
+                            <select id="targetPlatform" class="w-full bg-brand-slate text-white border border-slate-600 rounded-lg p-3 text-sm focus:border-brand-cyan focus:outline-none">
+                                <option value="nutanix">Nutanix AHV Cloud Platform</option>
+                                <option value="verge">Verge.IO Ultracloud OS</option>
+                                <option value="simplivity">HPE SimpliVity / Alletra</option>
+                                <option value="scale">Scale Computing HC3</option>
+                            </select>
+                        </div>
+
+                        <div class="bg-brand-slate/60 p-4 rounded-xl border border-slate-700 text-xs text-slate-300">
+                            <i class="fa-solid fa-circle-info text-brand-cyan mr-1"></i>
+                            Calculations reflect estimated 3-year subscription licensing, support overhead, and migration labor savings based on Broadcom list pricing trends.
+                        </div>
+                    </div>
+
+                    <!-- Calculator Results Display -->
+                    <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- VMware Estimated Spend -->
+                            <div class="bg-red-950/20 border border-red-500/30 p-5 rounded-xl text-center">
+                                <span class="text-xs uppercase font-bold text-red-400 tracking-wider">Est. 3-Year VMware Spend</span>
+                                <div id="vmwareCost" class="text-3xl font-extrabold text-red-300 mt-2">$144,000</div>
+                                <span class="text-[11px] text-slate-400 mt-1 block">Includes updated core-based licensing</span>
+                            </div>
+
+                            <!-- Target Platform Spend -->
+                            <div class="bg-emerald-950/20 border border-emerald-500/30 p-5 rounded-xl text-center">
+                                <span class="text-xs uppercase font-bold text-emerald-400 tracking-wider">Est. 3-Year Target Spend</span>
+                                <div id="targetCost" class="text-3xl font-extrabold text-emerald-300 mt-2">$64,800</div>
+                                <span class="text-[11px] text-slate-400 mt-1 block">Hardware + Target OS + PHXDS Migration</span>
+                            </div>
+                        </div>
+
+                        <!-- Savings Highlight Banner -->
+                        <div class="bg-gradient-to-r from-brand-blue/30 via-brand-cyan/20 to-brand-blue/30 border border-brand-cyan/40 p-6 rounded-2xl text-center">
+                            <span class="text-xs font-extrabold uppercase text-brand-cyan tracking-widest block">Estimated Total Savings</span>
+                            <div id="savingsAmount" class="text-4xl sm:text-5xl font-black text-white my-2">$79,200</div>
+                            <span id="savingsPercent" class="inline-block bg-brand-cyan text-brand-navy font-bold text-xs px-3 py-1 rounded-full uppercase">
+                                55% Cost Reduction
+                            </span>
+                        </div>
+
+                        <div class="text-center pt-2">
+                            <a href="#quote" class="inline-block bg-brand-cyan hover:bg-brand-blue text-brand-navy hover:text-white font-bold text-sm px-6 py-3 rounded-lg transition duration-200">
+                                Lock In Your Migration Savings Quote <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value-Added Benefits Section -->
+    <section class="py-16 bg-gradient-to-r from-brand-slate via-brand-navy to-brand-slate border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="flex items-start gap-4 p-4 rounded-xl glass-card border border-slate-800">
+                    <div class="text-brand-cyan text-2xl mt-1"><i class="fa-solid fa-user-shield"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Single Point of Contact</h4>
+                        <p class="text-xs text-slate-400 mt-1">Dedicated account team handling hardware, licensing, and engineer dispatch.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-4 rounded-xl glass-card border border-slate-800">
+                    <div class="text-brand-cyan text-2xl mt-1"><i class="fa-solid fa-calculator"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Cost Optimization</h4>
+                        <p class="text-xs text-slate-400 mt-1">Audit existing core counts to eliminate unnecessary software subscription overhead.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-4 rounded-xl glass-card border border-slate-800">
+                    <div class="text-brand-cyan text-2xl mt-1"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Turnkey Services</h4>
+                        <p class="text-xs text-slate-400 mt-1">Complete architecture design, data replication, testing, and live cutover execution.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-4 rounded-xl glass-card border border-slate-800">
+                    <div class="text-brand-cyan text-2xl mt-1"><i class="fa-solid fa-boxes-packing"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Volume Discounts</h4>
+                        <p class="text-xs text-slate-400 mt-1">Bundled server hardware and platform software licensing discounts passed to you.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote & Migration Assessment Request Form Section -->
+    <section id="quote" class="py-20 bg-brand-navy border-b border-slate-800 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-bold text-brand-cyan uppercase tracking-widest mb-2">Get Started Today</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Schedule Your VMware Migration Assessment</p>
+                <p class="text-slate-400 mt-2 text-sm">Receive a customized hardware proposal, target platform recommendation, and TCO report within 24 hours.</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-8 border border-slate-700/80 shadow-2xl relative">
+                <!-- Message Box Notification Area -->
+                <div id="formSuccessMessage" class="hidden mb-6 p-4 rounded-xl bg-emerald-950/80 border border-emerald-500 text-emerald-200 text-sm flex items-center gap-3">
+                    <i class="fa-solid fa-circle-check text-xl text-emerald-400"></i>
+                    <div>
+                        <strong>Assessment Request Submitted!</strong>
+                        <p class="text-xs">A PHXDS Senior Solutions Architect will contact you shortly to review your environment details.</p>
+                    </div>
+                </div>
+
+                <form id="migrationQuoteForm" class="space-y-6" onsubmit="handleFormSubmit(event)">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Full Name *</label>
+                            <input type="text" required placeholder="John Doe" 
+                                class="w-full bg-brand-slate text-white border border-slate-600 rounded-lg p-3 text-sm focus:border-brand-cyan focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Work Email *</label>
+                            <input type="email" required placeholder="jdoe@company.com" 
+                                class="w-full bg-brand-slate text-white border border-slate-600 rounded-lg p-3 text-sm focus:border-brand-cyan focus:outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Company Name *</label>
+                            <input type="text" required placeholder="Enterprise Corp" 
+                                class="w-full bg-brand-slate text-white border border-slate-600 rounded-lg p-3 text-sm focus:border-brand-cyan focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Phone Number *</label>
+                            <input type="tel" required placeholder="(480) 555-0199" 
+                                class="w-full bg-brand-slate text-white border border-slate-600 rounded-lg p-3 text-sm focus:border-brand-cyan focus:outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Current Hypervisor</label>
+                            <select class="w-full bg-brand-slate text-white border border-slate-600 rounded-lg p-3 text-sm focus:border-brand-cyan focus:outline-none">
+                                <option>VMware vSphere / ESXi</option>
+                                <option>VMware VCF / vSAN</option>
+                                <option>Legacy Hyper-V</option>
+                                <option>Other / Multi-Cloud</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Preferred Target Platform</label>
+                            <select class="w-full bg-brand-slate text-white border border-slate-600 rounded-lg p-3 text-sm focus:border-brand-cyan focus:outline-none">
+                                <option>Nutanix AHV</option>
+                                <option>Verge.IO Ultracloud</option>
+                                <option>HPE SimpliVity</option>
+                                <option>Scale Computing</option>
+                                <option>Azure Stack HCI</option>
+                                <option>Architect Recommendation Needed</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Estimated VM Count</label>
+                            <select class="w-full bg-brand-slate text-white border border-slate-600 rounded-lg p-3 text-sm focus:border-brand-cyan focus:outline-none">
+                                <option>1 - 50 VMs</option>
+                                <option>51 - 200 VMs</option>
+                                <option>201 - 500 VMs</option>
+                                <option>500+ Enterprise VMs</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Scope & Additional Requirements</label>
+                        <textarea rows="4" placeholder="Tell us about your current host hardware, storage array models, renewal target date, or specific SAN/NAS requirements..." 
+                            class="w-full bg-brand-slate text-white border border-slate-600 rounded-lg p-3 text-sm focus:border-brand-cyan focus:outline-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-brand-blue to-brand-cyan text-white font-bold py-4 rounded-xl shadow-xl hover:shadow-brand-cyan/20 hover:opacity-95 transition text-base uppercase tracking-wider">
+                        Submit Migration Assessment Request <i class="fa-solid fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us & Footer Section -->
+    <footer id="about" class="bg-brand-navy pt-16 pb-12 text-slate-400 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+                
+                <!-- Company Bio -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="#" class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-brand-slate border border-brand-cyan/30 flex items-center justify-center p-2 text-brand-cyan">
+                            <i class="fa-solid fa-shield-halved text-xl"></i>
+                        </div>
+                        <span class="text-xl font-black text-white tracking-tight">PHX<span class="text-brand-cyan">DS</span></span>
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed pr-6">
+                        Phoenix Data Center Solutions (PHXDS) is a premier technology solution provider and VAR based in the Phoenix/Scottsdale metro area. We specialize in enterprise hardware procurement, alternative hypervisor platform licensing, and turnkey VMware migration services for businesses across North America.
+                    </p>
+                    <div class="border-t border-slate-800 pt-3 mt-3">
+                        <span class="text-xs text-brand-cyan font-semibold block">Sales Leadership:</span>
+                        <p class="text-xs text-slate-200 font-bold">Melissa Golladay</p>
+                        <p class="text-[11px] text-slate-400">VP of Sales</p>
+                    </div>
+                </div>
+
+                <!-- Quick Navigation Links -->
+                <div>
+                    <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Migration Platforms</h5>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#platforms" class="hover:text-brand-cyan transition">Nutanix AHV Cloud</a></li>
+                        <li><a href="#platforms" class="hover:text-brand-cyan transition">Verge.IO Ultracloud</a></li>
+                        <li><a href="#platforms" class="hover:text-brand-cyan transition">HPE SimpliVity</a></li>
+                        <li><a href="#platforms" class="hover:text-brand-cyan transition">Scale Computing HC3</a></li>
+                        <li><a href="#platforms" class="hover:text-brand-cyan transition">Microsoft Azure Stack HCI</a></li>
+                    </ul>
+                </div>
+
+                <!-- VAR Hardware Capabilities -->
+                <div>
+                    <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Hardware Partners</h5>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><span class="text-slate-300">Dell Technologies Enterprise</span></li>
+                        <li><span class="text-slate-300">Hewlett Packard Enterprise (HPE)</span></li>
+                        <li><span class="text-slate-300">Cisco UCS Networking</span></li>
+                        <li><span class="text-slate-300">Lenovo ThinkSystem</span></li>
+                        <li><span class="text-slate-300">Supermicro Infrastructure</span></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Contact PHXDS</h5>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-user text-brand-cyan mt-0.5"></i>
+                            <div>
+                                <strong class="text-slate-200 block">Melissa Golladay</strong>
+                                <span class="text-slate-400">VP of Sales</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-location-dot text-brand-cyan mt-0.5"></i>
+                            <span>8998 E Raintree Dr, Suite 100<br>Scottsdale / Phoenix, AZ 85260</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-brand-cyan"></i>
+                            <a href="tel:6028772307" class="hover:text-white transition">(602) 877-2307</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-brand-cyan"></i>
+                            <a href="#quote" class="hover:text-white transition">solutions@phxds.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Legal & Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+                <div>
+                    © 2026 Phoenix Data Center Solutions, LLC (PHXDS). All rights reserved.
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-brand-cyan transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-brand-cyan transition">Terms of Service</a>
+                    <a href="#" class="hover:text-brand-cyan transition">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dynamic Script Logic -->
+    <script>
+        // Interactive TCO Calculator Logic
+        const vmCountInput = document.getElementById('vmCount');
+        const vmCountVal = document.getElementById('vmCountVal');
+        const cpuCoresInput = document.getElementById('cpuCores');
+        const targetPlatformInput = document.getElementById('targetPlatform');
+
+        const vmwareCostEl = document.getElementById('vmwareCost');
+        const targetCostEl = document.getElementById('targetCost');
+        const savingsAmountEl = document.getElementById('savingsAmount');
+        const savingsPercentEl = document.getElementById('savingsPercent');
+
+        // Target Platform Cost Multipliers relative to baseline
+        const platformMultipliers = {
+            verge: 0.40,     // ~60% savings
+            scale: 0.45,     // ~55% savings
+            nutanix: 0.55,   // ~45% savings
+            simplivity: 0.50 // ~50% savings
+        };
+
+        function updateTCOCalculator() {
+            const vms = parseInt(vmCountInput.value);
+            const cores = parseInt(cpuCoresInput.value);
+            const target = targetPlatformInput.value;
+
+            vmCountVal.textContent = vms;
+
+            // Estimated 3-Year VMware baseline formula (Core licensing + vSphere/vSAN + inflation)
+            const vmwareBaseline = (cores * 350 * 3) + (vms * 120);
+            
+            // Estimated Target Platform spend
+            const multiplier = platformMultipliers[target] || 0.50;
+            const targetSpend = vmwareBaseline * multiplier;
+            const totalSavings = vmwareBaseline - targetSpend;
+            const savingsPercent = Math.round((totalSavings / vmwareBaseline) * 100);
+
+            // Format numbers to USD currency
+            const formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumFractionDigits: 0
+            });
+
+            vmwareCostEl.textContent = formatter.format(vmwareBaseline);
+            targetCostEl.textContent = formatter.format(targetSpend);
+            savingsAmountEl.textContent = formatter.format(totalSavings);
+            savingsPercentEl.textContent = `${savingsPercent}% Cost Reduction`;
+        }
+
+        vmCountInput.addEventListener('input', updateTCOCalculator);
+        cpuCoresInput.addEventListener('change', updateTCOCalculator);
+        targetPlatformInput.addEventListener('change', updateTCOCalculator);
+
+        // Initial Calculation
+        updateTCOCalculator();
+
+        // Readiness Checker Logic
+        function runReadinessCheck() {
+            const workload = document.getElementById('workloadType').value;
+            const hwAge = document.getElementById('hardwareAge').value;
+            const priority = document.getElementById('migrationPriority').value;
+
+            const titleEl = document.getElementById('recPlatformTitle');
+            const descEl = document.getElementById('recPlatformDesc');
+            const resultBox = document.getElementById('readinessResultBox');
+
+            if (priority === 'cost' || hwAge === 'repurpose') {
+                titleEl.textContent = "Verge.IO Ultracloud OS";
+                descEl.textContent = "Your focus on maximizing cost reduction and repurposing existing server hardware makes Verge.IO the ideal choice. It runs directly on your current server infrastructure while collapsing compute, storage, and virtualization into a single license-efficient layer.";
+            } else if (workload === 'edge' || priority === 'simplicity') {
+                titleEl.textContent = "Scale Computing HC3 Platform";
+                descEl.textContent = "With a priority on extreme operational simplicity and edge/branch management, Scale Computing HC3 eliminates hypervisor licensing fees entirely while providing self-healing autonomous clustering.";
+            } else {
+                titleEl.textContent = "Nutanix AHV Cloud Platform";
+                descEl.textContent = "For enterprise-grade general workloads and databases requiring bulletproof live migration and robust management, Nutanix AHV delivers seamless parity and industry-leading enterprise support.";
+            }
+
+            resultBox.classList.remove('hidden');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Form Submission Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const successBox = document.getElementById('formSuccessMessage');
+            successBox.classList.remove('hidden');
+            
+            // Scroll smoothly to success box
+            successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Reset form fields
+            document.getElementById('migrationQuoteForm').reset();
+        }
+    </script>
+</body>
+</html>
